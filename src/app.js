@@ -70,7 +70,7 @@ app.post("/repositories/:id/like", (request, response) => {
   const {id}=request.params;
   const indexRepo= repositories.findIndex(repositorie => repositorie.id===id);
   if(indexRepo<0){
-    return this.response.status(404).json({error:"repositorie not found"});
+    return response.status(404).json({error:"repositorie not found"});
   };
 
   const title=repositories[indexRepo].title;  
